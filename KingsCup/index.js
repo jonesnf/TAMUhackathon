@@ -30,11 +30,11 @@ KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, re
     var speechOutput = "Hello. Are you ready to get lit?";
     var repromptText = "Good";
     response.ask(speechOutput, repromptText);
-    response.tellWithCard("Ready to start game. Drawing first card.");
+    /*response.tellWithCard("Ready to start game. Drawing first card.");
     StartCup();
     var msg = "";
     msg = drawFromDeck();
-    response.tellWithCard(msg);
+    response.tellWithCard(msg);*/
     
 };
 
@@ -47,17 +47,17 @@ KingsCup.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest,
 KingsCup.prototype.intentHandlers = {
     // register custom intent handlers
     "KingsCupIntent": function (intent, session, response) {
-        response.tell("Ready to start game. Drawing first card.");
+        var speechOutput = "Ready to start game. Drawing first card."
         StartCup();
         var msg = "";
         msg = drawFromDeck();
-        response.tell(msg);
+        response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
-        response.tell("Drawing next card");
+        var speechOutput = "Drawing next card";
         var msg = "";
         msg = drawFromDeck();
-        response.tell(msg);
+        response.ask(speechOutput, msg);
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");

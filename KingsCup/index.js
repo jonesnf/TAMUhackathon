@@ -27,14 +27,14 @@ KingsCup.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequ
 KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("KingsCup onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
    //var speechOutput = "Welcome to King\'s Cup.  Let\'s get lit. Say, Let\'s get lit.";
-    var speechOutput = "Hello. Areyou ready to get lit?";
-    var repromptText = "Hello ";
+    var speechOutput = "Hello. Are you ready to get lit?";
+    var repromptText = "Good";
     response.ask(speechOutput, repromptText);
     response.tellWithCard("Ready to start game. Drawing first card.");
-        StartGame();
-        var msg = "";
-        msg = drawFromDeck();
-        response.tell(msg);
+    StartCup();
+    var msg = "";
+    msg = drawFromDeck();
+    response.tell(msg);
     
 };
 
@@ -47,7 +47,7 @@ KingsCup.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest,
 KingsCup.prototype.intentHandlers = {
     // register custom intent handlers
     "KingsCupIntent": function (intent, session, response) {
-        response.tellWithCard("Ready to start game. Drawing first card.");
+        response.tell("Ready to start game. Drawing first card.");
         StartGame();
         var msg = "";
         msg = drawFromDeck();

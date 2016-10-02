@@ -1,13 +1,15 @@
 /**
 
-***This script creates a new deck array and shuffles it to be used in Alexa's King Cup game
+***This script creates a new deck array and shuffles it to be used in 's King Cup game
 ***
 
 ***/
+function StartCup(){
+    var deck = [52];
+    createDeck(deck);
+    var count = 52;
+]
 
-var deck = [52];
-createDeck(deck);
-drawFromDeck(deck);
 
 function createDeck(deck){
 
@@ -47,10 +49,13 @@ function shuffle(deck){
 
 function drawFromDeck(deck){
 
+    count--;
+  while(count >= 0){
     var randPick = Math.floor(Math.random() * 52);
     console.log("Random card picked: " + deck[randPick]);
 
     var value = 0;
+    var msg = "";
     
 //I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 
@@ -84,46 +89,52 @@ function drawFromDeck(deck){
 
     switch(randPick){
         case 0:
-            console.log("Alexa: Ace Picked.  WATERFALL");
+            msg = "Ace Picked.  WATERFALL";
             break;
         case 1: 
-            console.log("Alexa: Two for you!");
+            msg =  "Two for you!";
             break;
         case 2:
-            console.log("Alexa: Three is me!");
+            msg = "Three is me!";
             break;
         case 3:
-            console.log("Alexa:  Four is floor!");
+            msg = "Four is floor!";
             break;
         case 4: 
-            console.log("Alexa: Five is guys!");
+            msg = " Five is guys!";
             break;
         case 5:
-            console.log("Alexa: Six is chicks!");
+            msg = "Six is chicks!";
             break;
         case 6:
-             console.log("Alexa: Seven is heaven!");
+             msg = "Seven is heaven!";
              break;
         case 7: 
-            console.log("Alexa: Eight is date!");
+            msg = "Eight is date!";
             break;
         case 8: 
-            console.log("Alexa: Nine is rhyme!");
+            msg = "Nine is rhyme!";
             break;
         case 9: 
-            console.log("Alexa: Ten is categories!");
+            msg = "Ten is categories!";
             break;
         case 10:
-            console.log("Alexa: Jack is never have I ever!");
+            msg = "Jack is never have I ever!";
             break;
         case 11:
-            console.log("Alexa: Queen is Question Master!");
+            msg = "Queen is Question Master!";
             break;
         case 12:
-            console.log("Alexa: King! You get to make a new rule");
+            msg = "King! You get to make a new rule";
             break;
         default:
-            console.log("no cards picked");
+            msg = "no cards picked";
             break;
     }
+
+    return msg;
+
+  }
+
+  return msg;
 }

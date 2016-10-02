@@ -18,7 +18,7 @@ var KingsCup = function(){
 
 var msg = "";
 
-KingsCup.prototype = Object.(create(AlexaSkill.prototype);
+KingsCup.prototype = Object.create(AlexaSkill.prototype);
 KingsCup.prototype.constructor = KingsCup;
 
 KingsCup.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
@@ -205,6 +205,6 @@ function drawFromDeck(deck){
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
     // Create an instance of the KingsCup skill.
-    var KingsCup = new KingsCup();
-    KingsCup.execute(event, context);
+    var kingsCup = new KingsCup();
+    kingsCup.execute(event, context);
 };

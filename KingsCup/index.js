@@ -34,7 +34,7 @@ KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, re
     StartCup();
     var msg = "";
     msg = drawFromDeck();
-    response.tell(msg);
+    response.tellWithCard(msg);
     
 };
 
@@ -48,7 +48,7 @@ KingsCup.prototype.intentHandlers = {
     // register custom intent handlers
     "KingsCupIntent": function (intent, session, response) {
         response.tell("Ready to start game. Drawing first card.");
-        StartGame();
+        StartCup();
         var msg = "";
         msg = drawFromDeck();
         response.tell(msg);

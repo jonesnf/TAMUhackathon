@@ -22,8 +22,7 @@ KingsCup.prototype = Object.create(AlexaSkill.prototype);
 KingsCup.prototype.constructor = KingsCup;
 
 KingsCup.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
-    console.log("KingsCup onSessionStarted requestId: " + sessionStartedRequest.requestId
-        + ", sessionId: " + session.sessionId);
+    //console.log("KingsCup onSessionStarted requestId: " + sessionStartedRequest.requestId  + ", sessionId: " + session.sessionId);
     // any initialization logic goes here
 };
 

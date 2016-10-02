@@ -165,7 +165,7 @@ KingsCup.prototype.intentHandlers = {
         
         //msg = draw();
 //        console.log(msg);
-        response.ask(speechOutput, this.msg);
+        response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
         

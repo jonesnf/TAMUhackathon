@@ -168,9 +168,119 @@ KingsCup.prototype.intentHandlers = {
         response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
+          var speechOutput = "Ready to start game. Drawing first card.";
+ //       StartCup();
+        var deck = [52];
+
+        var i = 0;
+
+        for(i = 0; i < 52; i++){
+          deck[i] = i;
+        }
+
+        var current = deck.length-1, temp, random;
+
+        while(current !== 0){
+
+            random = Math.floor(Math.random() * current);
         
-        draw();
-        console.log(msg);
+            temp = deck[current];
+            deck[current] = deck[random];
+            deck[random] = temp;
+
+            current--;
+        }
+
+        var count = 52;
+          count--;
+          
+        var msg = "Wasn't able to pick card!";
+        if(count >= 0){
+            var randPick = Math.floor(Math.random() * 52);
+
+            var value = 0;
+    
+//I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
+
+    if(randPick >= 0 || randPick <= 3){
+        value = 0;
+    }else if(randPick > 3 || randPick <=7){
+        value = 1;
+    }else if(randPick > 7 || randPick <= 11){
+        value = 2; 
+    }else if(randPick > 11 || randPick <= 15){
+        value = 3;
+    }else if(randPick > 15 || randPick <=19){
+        value = 4;
+    }else if(randPick > 19 || randPick <= 23){
+        value = 5; 
+    }else if(randPick > 23 || randPick <= 27){
+        value = 6;
+    }else if(randPick > 27 || randPick <=31){
+        value = 7;
+    }else if(randPick > 31 || randPick <= 35){
+        value = 8; 
+    }else if(randPick > 35 || randPick <= 39){
+        value = 9;
+    }else if(randPick > 39 || randPick <= 43){
+        value = 10;
+    }else if(randPick > 43 || randPick <= 47){
+        value = 11; 
+    }else if(randPick > 47 || randPick <= 51){
+        value = 12;
+    }
+
+    switch(value){
+        case 0:
+            msg = "Ace Picked.  WATERFALL";
+            break;
+        case 1: 
+            msg =  "Two for you!";
+            break;
+        case 2:
+            msg = "Three is me!";
+            break;
+        case 3:
+            msg = "Four is floor!";
+            break;
+        case 4: 
+            msg = " Five is guys!";
+            break;
+        case 5:
+            msg = "Six is chicks!";
+            break;
+        case 6:
+             msg = "Seven is heaven!";
+             break;
+        case 7: 
+            msg = "Eight is date!";
+            break;
+        case 8: 
+            msg = "Nine is rhyme!";
+            break;
+        case 9: 
+            msg = "Ten is categories!";
+            break;
+        case 10:
+            msg = "Jack is never have I ever!";
+            break;
+        case 11:
+            msg = "Queen is Question Master!";
+            break;
+        case 12:
+            msg = "King! You get to make a new rule";
+            break;
+        default:
+            msg = "no cards picked";
+            break;
+      }
+
+    }
+
+        
+        //msg = draw();
+//        console.log(msg);
+        response.ask(speechOutput, msg);
         
     },
     "AMAZON.HelpIntent": function (intent, session, response) {

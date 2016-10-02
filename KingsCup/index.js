@@ -34,7 +34,7 @@ KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, re
 /*    var speechOutput = "Hello. Are you ready to get lit?";
     var repromptText = "Good";
     response.ask(speechOutput, repromptText) */
-    var speechOutput = "Hello. Are you ready to get lit? Ready to start game. Please say, Harambe was more than a gorilla start game";
+    var speechOutput = "Hello. Are you ready to get lit? Ready to start game. Please say, start game";
     var repromptText = "Please say, start game";
     response.ask(speechOutput, repromptText);
 /*    StartCup();
@@ -195,12 +195,13 @@ KingsCup.prototype.intentHandlers = {
 
         var count = 52;
           count--;
-          
+         var value = 0; 
+
         var msg = "Wasn't able to pick card!";
         if(count >= 0){
             var randPick = Math.floor(Math.random() * 52);
 
-            var value = 0;
+            
     
 //I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 

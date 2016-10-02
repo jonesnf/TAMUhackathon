@@ -29,20 +29,22 @@ KingsCup.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequ
 KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("KingsCup onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
    //var speechOutput = "Welcome to King\'s Cup.  Let\'s get lit. Say, Let\'s get lit.";
-    var speechOutput = "Hello. Are you ready to get lit?";
+/*    var speechOutput = "Hello. Are you ready to get lit?";
     var repromptText = "Good";
+    response.ask(speechOutput, repromptText) */
+    var speechOutput = "Hello. Are you ready to get lit? Ready to start game. Please say, start game";
+    var repromptText = "Please say, start game";
     response.ask(speechOutput, repromptText);
-    /*response.tellWithCard("Ready to start game. Drawing first card.");
-    StartCup();
+/*    StartCup();
     var msg = "";
     msg = drawFromDeck();
-    response.tellWithCard(msg);*/
+    response.tellWithCard(msg); */
     
 };
 
 KingsCup.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
-    console.log("KingsCup onSessionEnded requestId: " + sessionEndedRequest.requestId
-        + ", sessionId: " + session.sessionId);
+    console.log("KingsCup onSessionEnded requestId: " + sessionEndedRequest.requestId +
+                 ", sessionId: " + session.sessionId);
     // any cleanup logic goes here
 };
 
@@ -50,11 +52,11 @@ KingsCup.prototype.intentHandlers = {
     // register custom intent handlers
     "KingsCupIntent": function (intent, session, response) {
         var speechOutput = "Ready to start game. Drawing first card.";
-        StartCup();
+ //       StartCup();
         var msg = "";
-        msg = draw();
-        console.log(msg);
-        response.ask(speechOutput, msg);
+//        msg = draw();
+//        console.log(msg);
+        response.ask(speechOutput, "start cup didn't work");
     },
     "DrawCardIntent": function(intent, session, response){
         var speechOutput = "Drawing next card";
@@ -102,7 +104,7 @@ function createDeck(deck){
 };
 
 function draw(){
-    this.deck
+//    this.deck;
     var count = 52;
     drawFromDeck(this.deck, count);
 };

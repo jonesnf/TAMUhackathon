@@ -79,9 +79,9 @@ KingsCup.prototype.intentHandlers = {
 
 
         var msg = "";
-//        msg = draw();
+        msg = draw();
 //        console.log(msg);
-        response.ask(speechOutput, "shuffled");
+        response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
         var speechOutput = "Drawing next card";
@@ -160,7 +160,7 @@ function drawFromDeck(deck, count){
     console.log("Random card picked: " + deck[randPick]);
 
     var value = 0;
-    var msg = "";
+    var msg = "Wasn't able to pick card!";
     
 //I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 

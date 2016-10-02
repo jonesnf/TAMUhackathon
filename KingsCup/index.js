@@ -160,10 +160,6 @@ KingsCup.prototype.intentHandlers = {
             break;
       }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e536348902a79f9b34ae38173d65052fcf9deb4b
     }
 
         
@@ -330,11 +326,9 @@ function drawFromDeck(deck, count){
 
   }
 
-<<<<<<< HEAD
-  return this.msg;
-=======
+
   response.ask(speechOutput, msg);
->>>>>>> e536348902a79f9b34ae38173d65052fcf9deb4b
+
 };
 
 

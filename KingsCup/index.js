@@ -78,11 +78,12 @@ KingsCup.prototype.intentHandlers = {
 
         var count = 52;
           count--;
+          
+  var msg = "Wasn't able to pick card!";
   if(count >= 0){
     var randPick = Math.floor(Math.random() * 52);
 
     var value = 0;
-    var msg = "Wasn't able to pick card!";
     
 //I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 
@@ -159,7 +160,6 @@ KingsCup.prototype.intentHandlers = {
             break;
       }
 
-      break;
 
     }
 
@@ -326,7 +326,7 @@ function drawFromDeck(deck, count){
 
   }
 
-  return msg;
+  return this.msg;
 };
 
 

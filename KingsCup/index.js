@@ -114,7 +114,7 @@ KingsCup.prototype.intentHandlers = {
         value = 12;
     }
 
-    switch(randPick){
+    switch(value){
         case 0:
             msg = "Ace Picked.  WATERFALL";
             break;
@@ -157,7 +157,9 @@ KingsCup.prototype.intentHandlers = {
         default:
             msg = "no cards picked";
             break;
-    }
+      }
+
+      break;
 
     }
 

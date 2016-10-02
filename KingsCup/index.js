@@ -34,7 +34,7 @@ KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, re
 /*    var speechOutput = "Hello. Are you ready to get lit?";
     var repromptText = "Good";
     response.ask(speechOutput, repromptText) */
-    var speechOutput = "Hello. Are you ready to get lit? Ready to start game. Please say, Trump did harambe start game";
+    var speechOutput = "Hello. Are you ready to get lit? Ready to start game. Please say, Harambe was more than a gorilla start game";
     var repromptText = "Please say, start game";
     response.ask(speechOutput, repromptText);
 /*    StartCup();

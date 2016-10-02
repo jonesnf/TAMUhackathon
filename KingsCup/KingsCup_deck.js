@@ -11,15 +11,12 @@ drawFromDeck(deck);
 
 function createDeck(deck){
 
-	
-
 	var i = 0;
 
 	for(i = 0; i < 52; i++){
 		deck[i] = i;
 		console.log(deck[i] + "");
-	}
-
+    }
     console.log("Shuffling deck....");
 
 	deck = shuffle(deck);
@@ -28,8 +25,6 @@ function createDeck(deck){
 
 		console.log(deck[i] + "");
 	}
-
-
 }
 
 function shuffle(deck){
@@ -39,18 +34,15 @@ function shuffle(deck){
 	while(current != 0){
 
 		random = Math.floor(Math.random() * current);
-
 		
 		temp = deck[current];
 		deck[current] = deck[random];
 		deck[random] = temp;
 
 		current--;
-
 	}
 
 	return deck;
-
 }
 
 function drawFromDeck(deck){
@@ -132,7 +124,4 @@ function drawFromDeck(deck){
             console.log("no cards picked");
             break;
     }
-
-    
-
 }

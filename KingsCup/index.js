@@ -160,20 +160,22 @@ KingsCup.prototype.intentHandlers = {
             break;
       }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e536348902a79f9b34ae38173d65052fcf9deb4b
     }
 
         
         //msg = draw();
 //        console.log(msg);
-        response.ask(speechOutput, msg);
+        response.ask(speechOutput, this.msg);
     },
     "DrawCardIntent": function(intent, session, response){
-        var speechOutput = "Drawing next card";
-        var msg = "";
-        msg = draw();
+        
+        draw();
         console.log(msg);
-        response.ask(speechOutput, msg);
+        
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");
@@ -240,12 +242,15 @@ function shuffle(deck){
 function drawFromDeck(deck, count){
 
     count--;
-  while(count >= 0){
+    var msg = "Wasn't able to pick card!";
+
+    var speechOutput = "Drawing next card";
+    
+  if(count >= 0){
     var randPick = Math.floor(Math.random() * 52);
     console.log("Random card picked: " + deck[randPick]);
 
     var value = 0;
-    var msg = "Wasn't able to pick card!";
     
 //I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 
@@ -322,11 +327,14 @@ function drawFromDeck(deck, count){
             break;
     }
 
-    return msg;
 
   }
 
+<<<<<<< HEAD
   return this.msg;
+=======
+  response.ask(speechOutput, msg);
+>>>>>>> e536348902a79f9b34ae38173d65052fcf9deb4b
 };
 
 

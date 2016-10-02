@@ -61,9 +61,7 @@ KingsCup.prototype.intentHandlers = {
 
         for(i = 0; i < 52; i++){
           deck[i] = i;
-          console.log(deck[i] + "");
         }
-            console.log("Shuffling deck....");
 
         var current = deck.length-1, temp, random;
 

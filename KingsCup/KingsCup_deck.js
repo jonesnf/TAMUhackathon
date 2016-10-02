@@ -51,6 +51,8 @@ function drawFromDeck(deck){
     console.log("Random card picked: " + deck[randPick]);
 
     var value = 0;
+    
+//I realized having if statements leading to case statements is very repetitive but that is a-O-fucking-kay
 
     if(randPick >= 0 || randPick <= 3){
         value = 0;

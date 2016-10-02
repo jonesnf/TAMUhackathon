@@ -10,6 +10,8 @@
  */
 var APP_ID = undefined;
 
+var count = 52;
+
 var AlexaSkill = require('./AlexaSkill');
 
 var KingsCup = function(){
@@ -50,13 +52,15 @@ KingsCup.prototype.intentHandlers = {
         var speechOutput = "Ready to start game. Drawing first card."
         StartCup();
         var msg = "";
-        msg = drawFromDeck();
+        msg = draw();
+        console.log(msg);
         response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
         var speechOutput = "Drawing next card";
         var msg = "";
-        msg = drawFromDeck();
+        msg = draw();
+        console.log(msg);
         response.ask(speechOutput, msg);
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
@@ -70,11 +74,13 @@ KingsCup.prototype.intentHandlers = {
 ***
 
 ***/
+var deck = [52];
+
 function StartCup(){
-    var deck = [52];
-    createDeck(deck);
+    
+    createDeck(this.deck);
     var count = 52;
-}
+};
 
 
 function createDeck(deck){
@@ -87,13 +93,19 @@ function createDeck(deck){
     }
     console.log("Shuffling deck....");
 
-    deck = shuffle(deck);
+    this.deck = shuffle(this.deck);
 
     for(i = 0; i < deck.length; i++){
 
         console.log(deck[i] + "");
     }
-}
+};
+
+function draw(){
+    this.deck
+    var count = 52;
+    drawFromDeck(this.deck, count);
+};
 
 function shuffle(deck){
 
@@ -111,9 +123,9 @@ function shuffle(deck){
     }
 
     return deck;
-}
+};
 
-function drawFromDeck(deck){
+function drawFromDeck(deck, count){
 
     count--;
   while(count >= 0){
@@ -203,7 +215,7 @@ function drawFromDeck(deck){
   }
 
   return msg;
-}
+};
 
 
 

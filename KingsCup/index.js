@@ -30,8 +30,8 @@ KingsCup.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequ
 KingsCup.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("KingsCup onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
    //var speechOutput = "Welcome to King\'s Cup.  Let\'s get lit. Say, Let\'s get lit.";
-    var speechOutput = "Welcome to King\'s Cup.";
-    var repromptText = "Let us get lit. ";
+    var speechOutput = "Hello";
+    var repromptText = "Hello ";
     response.ask(speechOutput, repromptText);
 };
 

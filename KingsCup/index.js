@@ -16,7 +16,7 @@ var KingsCup = function(){
     AlexaSkill.call(this, APP_ID);
 };
 
-var msg = "";
+
 
 KingsCup.prototype = Object.create(AlexaSkill.prototype);
 KingsCup.prototype.constructor = KingsCup;
@@ -46,13 +46,15 @@ KingsCup.prototype.intentHandlers = {
     "KingsCupIntent": function (intent, session, response) {
         response.tellWithCard("Ready to start game. Drawing first card.");
         StartGame();
+        var msg = "";
         msg = drawFromDeck();
-        response.tellWithCard(msg);
+        response.tell(msg);
     },
     "DrawCardIntent": function(intent, session, response){
-        response.tellWithCard("Drawing next card");
+        response.tell("Drawing next card");
+        var msg = "";
         msg = drawFromDeck();
-        response.tellWithCard(msg);
+        response.tell("msg");
     }
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("You can say hello to me!", "You can say hello to me!");

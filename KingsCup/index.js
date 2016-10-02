@@ -49,7 +49,7 @@ KingsCup.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest,
 KingsCup.prototype.intentHandlers = {
     // register custom intent handlers
     "KingsCupIntent": function (intent, session, response) {
-        var speechOutput = "Ready to start game. Drawing first card."
+        var speechOutput = "Ready to start game. Drawing first card.";
         StartCup();
         var msg = "";
         msg = draw();

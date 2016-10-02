@@ -1,0 +1,19 @@
+{
+  "intents": [
+    {
+      "intent": "KingsCupIntent"
+    },
+    {
+      "intent": "DrawCardIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

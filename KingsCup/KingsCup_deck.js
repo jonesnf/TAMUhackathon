@@ -8,7 +8,7 @@ function StartCup(){
     var deck = [52];
     createDeck(deck);
     var count = 52;
-]
+};
 
 
 function createDeck(deck){
@@ -27,7 +27,7 @@ function createDeck(deck){
 
 		console.log(deck[i] + "");
 	}
-}
+};
 
 function shuffle(deck){
 
@@ -45,7 +45,7 @@ function shuffle(deck){
 	}
 
 	return deck;
-}
+};
 
 function drawFromDeck(deck){
 
@@ -137,4 +137,4 @@ function drawFromDeck(deck){
   }
 
   return msg;
-}
+};

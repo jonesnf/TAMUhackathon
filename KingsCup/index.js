@@ -12,6 +12,8 @@ var APP_ID = undefined;
 
 var count = 52;
 
+var deck = [52];
+
 var AlexaSkill = require('./AlexaSkill');
 
 var KingsCup = function(){
@@ -53,10 +55,35 @@ KingsCup.prototype.intentHandlers = {
     "KingsCupIntent": function (intent, session, response) {
         var speechOutput = "Ready to start game. Drawing first card.";
  //       StartCup();
+        var deck = [52];
+
+        var i = 0;
+
+        for(i = 0; i < 52; i++){
+          deck[i] = i;
+          console.log(deck[i] + "");
+        }
+            console.log("Shuffling deck....");
+
+        var current = deck.length-1, temp, random;
+
+        while(current !== 0){
+
+            random = Math.floor(Math.random() * current);
+        
+            temp = deck[current];
+            deck[current] = deck[random];
+            deck[random] = temp;
+
+            current--;
+        }
+
+
+
         var msg = "";
 //        msg = draw();
 //        console.log(msg);
-        response.ask(speechOutput, "start cup didn't work");
+        response.ask(speechOutput, "shuffled");
     },
     "DrawCardIntent": function(intent, session, response){
         var speechOutput = "Drawing next card";

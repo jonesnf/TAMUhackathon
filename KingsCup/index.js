@@ -168,7 +168,7 @@ KingsCup.prototype.intentHandlers = {
         response.ask(speechOutput, msg);
     },
     "DrawCardIntent": function(intent, session, response){
-          var speechOutput = "Ready to start game. Drawing first card.";
+          var speechOutput = "Drawing Card";
  //       StartCup();
         var deck = [52];
 
@@ -180,7 +180,7 @@ KingsCup.prototype.intentHandlers = {
 
         var current = deck.length-1, temp, random;
 
-        while(current !== 0){
+        while(current != 0){
 
             random = Math.floor(Math.random() * current);
         
